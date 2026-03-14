@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MuseumAI - Intelligent Museum Experience</title>
+    <meta name="description" content="Experience the future of museum visits with AI-powered ticket booking, virtual tours, and personalized recommendations." />
+    <meta name="author" content="MuseumAI" />
+
+    <meta property="og:title" content="MuseumAI - Intelligent Museum Experience" />
+    <meta property="og:description" content="Book tickets, explore exhibits, and discover art with our AI-powered museum companion." />
+    <meta property="og:type" content="website" />
+   
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+
+    
+    <style>
+      @media(max-width:768px){
+        html,body{overflow-x:hidden}
+        /* Padding containers */
+        div[style*="padding: '0 40px'"],div[style*="padding:'0 40px'"]{padding-left:14px!important;padding-right:14px!important}
+        div[style*="padding: '80px 40px'"],div[style*="padding:'80px 40px'"]{padding:44px 14px!important}
+        footer div[style*="padding"]{padding:36px 14px 24px!important}
+        /* Grid: 2-col → 1-col */
+        div[style*="gridTemplateColumns: '1fr 1fr'"],div[style*="gridTemplateColumns:'1fr 1fr'"]{grid-template-columns:1fr!important}
+        /* Grid: 4-col → 2-col */
+        div[style*="repeat(4, 1fr)"],div[style*="repeat(4,1fr)"]{grid-template-columns:repeat(2,1fr)!important;gap:7px!important}
+        /* Grid: 3-col → 2-col */
+        div[style*="repeat(3, 1fr)"],div[style*="repeat(3,1fr)"]{grid-template-columns:repeat(2,1fr)!important;gap:7px!important}
+        /* Grid: asymmetric → 1-col */
+        div[style*="1.6fr 1fr"],div[style*="1fr 1.8fr"]{grid-template-columns:1fr!important}
+        /* Museum detail sidebar */
+        div[style*="1fr 380px"],div[style*="1fr, 380px"]{display:flex!important;flex-direction:column!important;gap:14px!important;padding-left:14px!important;padding-right:14px!important}
+        /* Booking minmax */
+        div[style*="minmax(380px"],div[style*="minmax(300px"],div[style*="minmax(260px"]{grid-template-columns:1fr!important}
+        /* maxWidth wrappers */
+        div[style*="maxWidth: 1360"],div[style*="maxWidth:1360"],div[style*="maxWidth: 1200"],div[style*="maxWidth:1200"]{padding-left:14px!important;padding-right:14px!important}
+        /* Large heights */
+        div[style*="height: '480px'"],div[style*="height:'480px'"]{height:220px!important}
+        /* Flex row → column */
+        div[style*="gap:60"][style*="alignItems:'center'"],div[style*="gap:80"][style*="alignItems:'center'"]{flex-direction:column!important;gap:20px!important}
+        /* Clerk */
+        .cl-rootBox,.cl-card{max-width:100%!important;width:100%!important;margin:0!important;border-radius:0!important;box-shadow:none!important}
+        .cl-formButtonPrimary{width:100%!important}
+      }
+      @media(max-width:480px){
+        div[style*="repeat(4, 1fr)"],div[style*="repeat(4,1fr)"]{grid-template-columns:1fr!important}
+        div[style*="repeat(3, 1fr)"],div[style*="repeat(3,1fr)"]{grid-template-columns:1fr!important}
+        div[style*="repeat(2, 1fr)"][style*="minmax"],div[style*="repeat(2,1fr)"][style*="minmax"]{grid-template-columns:1fr!important}
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
