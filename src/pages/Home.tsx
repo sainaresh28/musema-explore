@@ -114,7 +114,7 @@ const PROC_STEPS = [
 
 const FEATURES = [
   { cls:'fcard-v4-rust',  icon:'bot',   name:'AI Chatbot Guide',   desc:'Powered by Groq + Wikipedia. Ask anything — exhibits, prices, timings, hidden gems. Available 24/7.' },
-  { cls:'fcard-v4-cream', icon:'mic',   name:'Voice Assistant',    desc:'Talk in Hindi or English. Push-to-talk or continuous mode. Hands-free museum booking.' },
+  { cls:'fcard-v4-dark', icon:'mic',   name:'Voice Assistant',    desc:'Talk in Hindi or English. Push-to-talk or continuous mode. Hands-free museum booking.' },
   { cls:'fcard-v4-dark',  icon:'brain', name:'Emotion AI',          desc:'Reads your mood from conversation and personalises museum picks — historic, adventurous, scientific, family.' },
   { cls:'fcard-v4-rust',  icon:'qr',    name:'Instant QR Tickets', desc:'Book via chat. QR ticket delivered to your dashboard instantly. Scan at the gate — no printing needed.' },
 ];
