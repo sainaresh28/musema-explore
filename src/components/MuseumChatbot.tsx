@@ -143,7 +143,7 @@ const MuseumChatbot = () => {
       const name = user?.firstName ? ` ${user.firstName}` : '';
       pushBot(
         `Namaste${name}! I'm your **Musema AI Guide**.\n\n` +
-        `Ask me about **any of India's 700+ museums** — I'll fetch live info, show photos, and book tickets!\n\n` +
+        `Ask me about **any of India's Iconic museums** — I'll fetch live info, show photos, and book tickets!\n\n` +
         `- **See images** of any museum\n` +
         `- **Talk to me** with voice\n` +
         `- **Book tickets** chatbot-style or self-fill\n\n` +

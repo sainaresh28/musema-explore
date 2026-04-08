@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { MapPin, ArrowRight, MessageSquare } from 'lucide-react';
 import MainLayout from '../templates/MainLayout';
 import chatbotImg from '../assets/chatbot.png';
+import museumCtaBg from '../assets/museum-cta-bg.png';
 
 const fromUnsplash = (url: string, w = 800) =>
   url.startsWith('https://images.unsplash.com') ? `${url}?w=${w}&q=80&fit=crop` : url;
@@ -151,7 +152,7 @@ const FAN_POS: [number,number,number,number][] = [
   [0,40,0,130],[100,60,14,118],[210,100,27,106],[330,155,40,96],[455,225,52,86],
 ];
 
-const MARQUEE_BIG   = ['700+ MUSEUMS','AI GUIDED','28 STATES','VOICE BOOKING','1M+ VISITORS','QR TICKETS','EMOTION AI','4.9★ RATED'];
+const MARQUEE_BIG   = ['ICONIC MUSEUMS','AI GUIDED','28 STATES','VOICE BOOKING','1M+ VISITORS','QR TICKETS','EMOTION AI','4.9★ RATED'];
 const MARQUEE_SMALL = ['NATIONAL MUSEUM · DELHI','VICTORIA MEMORIAL · KOLKATA','ALBERT HALL · JAIPUR','CSMVS · MUMBAI','SALAR JUNG · HYDERABAD','NAPIER MUSEUM · KERALA','INDIAN MUSEUM · KOLKATA','VITM · BENGALURU'];
 
 type MCard = { img:string; badge:string; rating:string; city:string; name:string };
@@ -374,6 +375,85 @@ export default function Home() {
         @media(max-width:480px) {
           .home-features-grid { grid-template-columns:1fr 1fr !important; }
         }
+
+        /* ── Museums CTA section ── */
+        /* ── Museums CTA ── */
+        .museums-cta-section {
+          margin: 24px;
+          border-radius: 20px;
+          border-top: 2px solid rgba(160,120,60,0.55);
+          border-bottom: 2px solid rgba(160,120,60,0.55);
+          border-left: 2px solid rgba(180,140,80,0.35);
+          border-right: 2px solid rgba(180,140,80,0.35);
+          overflow: hidden;
+          box-shadow: 0 8px 40px rgba(120,80,20,0.15);
+          background: #f5efe4;
+        }
+        /* Image block — full native aspect ratio, no cropping */
+        .museums-cta-inner {
+          width: 100%;
+          aspect-ratio: 2000 / 1242;
+          background-size: 100% 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          display: block;
+        }
+        /* Buttons row — always below the image */
+        .museums-cta-btns {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px 28px;
+          gap: 12px;
+        }
+        .museums-cta-btn-left,
+        .museums-cta-btn-right {
+          flex-shrink: 0;
+        }
+        .btn-v4-stroke.museums-cta-btn-right {
+          border-color: rgba(24,21,15,0.55) !important;
+          color: var(--k) !important;
+          background: rgba(255,255,255,0.72) !important;
+          backdrop-filter: blur(6px);
+        }
+        .btn-v4-stroke.museums-cta-btn-right:hover {
+          background: rgba(255,255,255,0.92) !important;
+        }
+
+        /* Tablet */
+        @media(max-width:768px) {
+          .museums-cta-section { margin: 16px 12px; border-radius: 16px; }
+          .museums-cta-btns { padding: 16px 16px; gap: 10px; }
+          .museums-cta-btn-left,
+          .museums-cta-btn-right {
+            font-size: .8rem !important;
+            padding: 10px 16px !important;
+          }
+        }
+
+        /* Mobile — small side-by-side buttons */
+        @media(max-width:480px) {
+          .museums-cta-section { margin: 12px 8px; border-radius: 14px; }
+          .museums-cta-inner {
+            aspect-ratio: 4 / 3 !important;
+            background-size: cover !important;
+            background-position: center 10% !important;
+          }
+          .museums-cta-btns {
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 14px 14px;
+            gap: 8px;
+          }
+          .museums-cta-btn-left,
+          .museums-cta-btn-right {
+            width: auto !important;
+            font-size: .72rem !important;
+            padding: 7px 12px !important;
+            white-space: nowrap;
+          }
+        }
       `}</style>
 
       {/* ── HERO ─────────────────────────────────────────────── */}
@@ -389,7 +469,7 @@ export default function Home() {
                   <span className="hv4-word hv4-word-discover">Discover</span>
                 </span>
                 <span className="hv4-word-row hv4-row-num hv4-row-center">
-                  <span className="hv4-num-outline">700+</span>
+                  <span className="hv4-num-outline">Iconic</span>
                   <span className="hv4-num-fill">Museums</span>
                 </span>
                 <span className="hv4-word-row hv4-row-right">
@@ -591,18 +671,20 @@ export default function Home() {
       </section>
 
       {/* ── MUSEUMS CTA ───────────────────────────────────────── */}
-      <section style={{background:'var(--w)',padding:'72px 0',borderTop:'1.5px solid var(--bd)',borderBottom:'1.5px solid var(--bd)'}}>
-        <div className="home-howitworks-row" style={{maxWidth:1360,margin:'auto',padding:'0 40px',display:'flex',alignItems:'center',justifyContent:'space-between',gap:40}}>
-          <div className="R">
-            <div style={{fontFamily:"'Syne',sans-serif",fontSize:'.68rem',fontWeight:700,letterSpacing:'.2em',textTransform:'uppercase',color:'var(--k3)',marginBottom:10}}>Book Now</div>
-            <h2 style={{fontFamily:"'Bebas Neue',cursive",fontSize:'clamp(2.5rem,4vw,3.6rem)',lineHeight:.95,color:'var(--k)',margin:0}}>
-              Browse <em style={{color:'var(--r)',fontStyle:'normal'}}>700+ Museums</em> & Book Instantly
-            </h2>
-          </div>
-          <div className="RR" style={{display:'flex',gap:12,flexShrink:0}}>
-            <button className="btn-v4-fill" onClick={()=>navigate('/museums')}>Explore All Museums <ArrowRight size={14}/></button>
-            <button className="btn-v4-stroke" onClick={openChatbot}>Ask AI Guide</button>
-          </div>
+      <section className="museums-cta-section">
+        {/* Full-ratio image block */}
+        <div
+          className="museums-cta-inner"
+          style={{backgroundImage:`url(${museumCtaBg})`}}
+        />
+        {/* Buttons row sits below the image, never overlapping */}
+        <div className="museums-cta-btns">
+          <button className="btn-v4-fill museums-cta-btn-left" onClick={()=>navigate('/museums')}>
+            Explore All Museums <ArrowRight size={14}/>
+          </button>
+          <button className="btn-v4-stroke museums-cta-btn-right" onClick={openChatbot}>
+            Ask AI Guide
+          </button>
         </div>
       </section>
 
@@ -637,7 +719,7 @@ export default function Home() {
             <div style={{position:'relative',zIndex:3,textAlign:'center',marginBottom:56}}>
       
               <h2 className="arc-v4-h2">ASK AI<br/><em>ANYTHING ABOUT</em><br/>INDIAN MUSEUMS</h2>
-              <p className="arc-v4-p">Our AI knows every museum, every exhibit, every artifact across India's 700+ institutions. From ticket prices to secret galleries — just ask.</p>
+              <p className="arc-v4-p">Our AI knows every museum, every exhibit, every artifact across India's Iconic institutions. From ticket prices to secret galleries — just ask.</p>
               <button className="btn-v4-white" onClick={openChatbot}><MessageSquare size={16}/>Chat with AI Guide</button>
             </div>
             <div className="arc-strip-v4">
